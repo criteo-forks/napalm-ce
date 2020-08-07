@@ -121,7 +121,7 @@ class CEDriver(NetworkDriver):
 
     def close(self):
         """Close the connection to the device."""
-        if self.changed and self.backup_file is not "":
+        if self.changed and self.backup_file != "":
             self._delete_file(self.backup_file)
         self.device.disconnect()
         self.device = None
