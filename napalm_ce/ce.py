@@ -1137,7 +1137,7 @@ class CEDriver(NetworkDriver):
             raise ValueError(msg)
 
         kbytes_free = 0
-        num_list = map(int, re.findall(r'\d+', match.group()))
+        num_list = list(map(int, re.findall(r'\d+', match.group())))
         for index, val in enumerate(reversed(num_list)):
             kbytes_free += val * (1000 ** index)
         bytes_free = kbytes_free * 1024
